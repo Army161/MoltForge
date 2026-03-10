@@ -120,7 +120,7 @@ export default function BillingPage() {
       <div className="forge-card rounded-sm p-3 border-forge-amber/15 flex items-start gap-3">
         <AlertTriangle size={13} className="text-forge-amber shrink-0 mt-0.5" />
         <p className="text-xs text-[#A1A1AA]">
-          Stripe integration is active. Live payments will be processed. Ensure STRIPE_API_KEY is configured in your environment.
+          Stripe is configured. Using test keys — no real charges will occur. Set <span className="font-mono text-forge-cyan">STRIPE_API_KEY=sk_live_...</span> in your environment to enable live payments.
         </p>
       </div>
 

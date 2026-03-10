@@ -36,11 +36,26 @@ export default function AdminPage() {
       setJobs(jobsRes.data);
       setUsers(usersRes.data);
       setAudit(auditRes.data);
-    } catch (e) { console.error(e); }
+    } catch (e) {
+      if (e.response?.status === 403) {
+        setStats("forbidden");
+      }
+      console.error(e);
+    }
     finally { setLoading(false); }
   };
 
   useEffect(() => { load(); }, []);
+
+  if (stats === "forbidden") {
+    return (
+      <div className="max-w-lg mx-auto mt-24 text-center space-y-4">
+        <Shield size={40} className="text-[#3F3F46] mx-auto" />
+        <h2 className="font-secondary font-bold text-white text-lg">Admin Access Required</h2>
+        <p className="text-sm text-[#52525B]">This section is restricted to platform administrators. Contact your admin to request access.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-7xl mx-auto space-y-6">

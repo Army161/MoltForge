@@ -667,23 +667,28 @@ async def stripe_webhook(request: Request):
     return {"received": True}
 
 # ── Admin Routes ───────────────────────────────────────────────────────────────
+async def require_admin(user: dict = Depends(get_current_user)) -> dict:
+    if not user.get("is_admin", False):
+        raise HTTPException(403, "Admin access required")
+    return user
+
 @api_router.get("/admin/jobs")
-async def admin_jobs(user: dict = Depends(get_current_user)):
+async def admin_jobs(user: dict = Depends(require_admin)):
     jobs = await db.install_jobs.find({}, {"_id": 0}).sort("created_at", -1).to_list(200)
     return jobs
 
 @api_router.get("/admin/users")
-async def admin_users(user: dict = Depends(get_current_user)):
+async def admin_users(user: dict = Depends(require_admin)):
     users = await db.users.find({}, {"_id": 0, "password_hash": 0}).to_list(500)
     return users
 
 @api_router.get("/admin/audit")
-async def admin_audit(user: dict = Depends(get_current_user)):
+async def admin_audit(user: dict = Depends(require_admin)):
     logs = await db.audit_logs.find({}, {"_id": 0}).sort("timestamp", -1).to_list(500)
     return logs
 
 @api_router.get("/admin/stats")
-async def admin_stats(user: dict = Depends(get_current_user)):
+async def admin_stats(user: dict = Depends(require_admin)):
     total_users = await db.users.count_documents({})
     total_workspaces = await db.workspaces.count_documents({})
     active_workspaces = await db.workspaces.count_documents({"status": "active"})
