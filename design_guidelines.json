@@ -1,0 +1,131 @@
+{
+  "brand": {
+    "name": "MoltForge",
+    "description": "Production-ready managed agent-install platform.",
+    "archetype": "Cyber-Industrial / Agent-Control-Plane",
+    "tone": "Technical, Powerful, Reliable, High-Trust, Command-Center"
+  },
+  "typography": {
+    "primary_font": "IBM Plex Sans",
+    "secondary_font": "Azeret Mono",
+    "mono_font": "JetBrains Mono",
+    "google_fonts_import": "@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');",
+    "usage": {
+      "headings": "font-secondary (Azeret Mono) - Uppercase for h6/labels, Normal for h1-h5. Tracking-tight.",
+      "body": "font-primary (IBM Plex Sans) - High legibility.",
+      "code": "font-mono (JetBrains Mono) - Logs, API keys, IDs."
+    }
+  },
+  "colors": {
+    "theme": "dark",
+    "palette": {
+      "background": "#050505",
+      "surface": "#0A0A0A",
+      "surface_highlight": "#121212",
+      "border": "#27272A",
+      "primary": "#22D3EE",
+      "primary_hover": "#06B6D4",
+      "secondary": "#F59E0B",
+      "success": "#10B981",
+      "error": "#EF4444",
+      "text_primary": "#FAFAFA",
+      "text_secondary": "#A1A1AA",
+      "text_muted": "#52525B"
+    },
+    "gradients": {
+      "hero_glow": "radial-gradient(circle at center, rgba(34, 211, 238, 0.15) 0%, rgba(5, 5, 5, 0) 70%)",
+      "beam_blue": "linear-gradient(to right, transparent, #22D3EE, transparent)",
+      "beam_amber": "linear-gradient(to right, transparent, #F59E0B, transparent)"
+    }
+  },
+  "spacing": {
+    "container_padding": "p-6 md:p-8 lg:p-12",
+    "section_gap": "gap-8 md:gap-12",
+    "element_gap": "gap-4"
+  },
+  "radius": {
+    "default": "rounded-sm",
+    "buttons": "rounded-sm",
+    "inputs": "rounded-sm",
+    "cards": "rounded-md",
+    "pills": "rounded-full"
+  },
+  "shadows": {
+    "card": "0 1px 0 0 rgba(255, 255, 255, 0.1) inset, 0 4px 6px -1px rgba(0, 0, 0, 0.5)",
+    "glow": "0 0 20px -5px rgba(34, 211, 238, 0.3)"
+  },
+  "layout_strategies": {
+    "landing_page": {
+      "grid_mode": "Tetris Grid (Mode A)",
+      "structure": "Hero (Full width) -> Features (Bento Grid) -> Pricing (3-col) -> CTA",
+      "visuals": "Abstract network backgrounds, large typography, glowing borders."
+    },
+    "dashboard": {
+      "grid_mode": "Bento Grid (Mode B - High Density)",
+      "structure": "Sidebar (Fixed) + Topbar (Breadcrumbs/User) + Main Content (Grid)",
+      "card_style": "Flat, 1px border (border-white/10), bg-black/40 backdrop-blur-md.",
+      "density": "Compact. Use h-full to stretch widgets."
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-primary text-black hover:bg-primary-hover font-semibold shadow-[0_0_15px_rgba(34,211,238,0.4)] transition-all active:scale-95",
+      "secondary": "border border-white/10 bg-white/5 hover:bg-white/10 text-white transition-all",
+      "ghost": "hover:bg-white/5 text-text_secondary hover:text-white"
+    },
+    "inputs": {
+      "style": "bg-zinc-950/50 border-white/10 focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all font-mono text-sm placeholder:text-zinc-600"
+    },
+    "cards": {
+      "style": "bg-black/40 border border-white/10 backdrop-blur-sm relative overflow-hidden group"
+    },
+    "status_badges": {
+      "style": "inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full text-xs font-medium border",
+      "variants": {
+        "healthy": "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
+        "provisioning": "bg-amber-500/10 text-amber-400 border-amber-500/20 animate-pulse",
+        "failed": "bg-red-500/10 text-red-400 border-red-500/20",
+        "stopped": "bg-zinc-500/10 text-zinc-400 border-zinc-500/20"
+      }
+    }
+  },
+  "assets": {
+    "hero_bg": "https://images.unsplash.com/photo-1750969185331-e03829f72c7d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwzfHxhYnN0cmFjdCUyMGRpZ2l0YWwlMjBuZXR3b3JrJTIwY29ubmVjdGlvbnMlMjBkYXJrJTIwYmx1ZSUyMGN5YW58ZW58MHx8fHwxNzczMTM5NDQ0fDA&ixlib=rb-4.1.0&q=85",
+    "feature_chip": "https://images.pexels.com/photos/11272008/pexels-photo-11272008.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "server_rack": "https://images.unsplash.com/photo-1762163516269-3c143e04175c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxzZXJ2ZXIlMjByYWNrJTIwZGF0YSUyMGNlbnRlciUyMGRhcmslMjBibHVlJTIwY3lhbiUyMGxpZ2h0c3xlbnwwfHx8fDE3NzMxMzk0NTh8MA&ixlib=rb-4.1.0&q=85",
+    "icons": "lucide-react (Use standard set: Server, Cpu, Activity, Shield, Terminal, Zap, Settings, Users, CreditCard)"
+  },
+  "animations": {
+    "library": "framer-motion",
+    "page_transition": {
+      "initial": { "opacity": 0, "y": 10 },
+      "animate": { "opacity": 1, "y": 0 },
+      "exit": { "opacity": 0, "y": -10 },
+      "transition": { "duration": 0.3, "ease": "easeInOut" }
+    },
+    "micro_interactions": {
+      "hover_lift": "hover:-translate-y-1 transition-transform duration-200",
+      "button_press": "active:scale-95 transition-transform duration-75"
+    }
+  },
+  "instructions_to_main_agent": [
+    "1. INSTALL FONTS FIRST: Add the Google Fonts import to /app/frontend/src/index.css at the very top.",
+    "2. CONFIGURE TAILWIND: Update tailwind.config.js to extend the colors with the specific palette provided. Set 'borderRadius' to match the 'radius' section.",
+    "3. IMPLEMENT LAYOUTS: Use the specific 'grid_mode' strategies for Landing vs Dashboard.",
+    "4. USE SHADCN: Use existing shadcn components but OVERRIDE their default styles using the 'components' rules (e.g., bg-black/40 for cards).",
+    "5. DARK MODE ONLY: Force dark mode. Do not implement a light mode toggle. Set 'dark' class on the HTML or Body tag permanently.",
+    "6. DATA-TESTID: Ensure every interactive element has a 'data-testid' attribute.",
+    "7. NO GRADIENT TEXT: Avoid gradient text unless it's a very large hero title. Keep body text solid white/grey.",
+    "8. BORDERS: Use 'border-white/10' or 'border-white/5' for almost all borders. Avoid default heavy borders.",
+    "9. CHART COLORS: Configure Recharts to use the Primary (Cyan) and Secondary (Amber) colors."
+  ],
+  "universal_guidelines": [
+    "Don't make generic centered layouts.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "Every interaction needs micro-animations.",
+    "Use 2-3x more spacing than feels comfortable.",
+    "Subtle grain textures, noise overlays, custom cursors.",
+    "NEVER use AI assistant Emoji characters."
+  ]
+}
